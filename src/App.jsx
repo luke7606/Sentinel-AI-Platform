@@ -1,7 +1,7 @@
 import { useState, useRef, useEffect, useCallback } from "react";
 import "./styles/App.css";
 import { I18N, LANGS, LANG_LABELS } from "./i18n";
-import { DEMO_USERS, SLA_MS, DEFAULT_KB, getDemoTickets, INTEGRATION_DEFS } from "./constants";
+import { DEMO_USERS, SLA_MS, DEFAULT_KB, INTEGRATION_DEFS } from "./constants";
 import { fmtDur, fmtAge, detectSev, getSevClass } from "./utils";
 
 export default function SentinelApp() {
@@ -14,7 +14,7 @@ export default function SentinelApp() {
   const [escalated, setEscalated] = useState(false);
   const [n1Steps, setN1Steps] = useState(0);
 
-  const [tickets, setTickets] = useState(() => getDemoTickets("en"));
+  const [tickets, setTickets] = useState(DEMO_TICKETS);
   const [activeTicket, setActiveTicket] = useState(null);
   const [tktFilter, setTktFilter] = useState("all");
   const [kbDocs, setKbDocs] = useState([]);
@@ -54,7 +54,7 @@ export default function SentinelApp() {
 
   const setLang = (l) => {
     setLangState(l);
-    setTickets(getDemoTickets(l));
+    
     if (user?.role === "client" && chatMessages.length === 0) initChat(l);
   };
 
