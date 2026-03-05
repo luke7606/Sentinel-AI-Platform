@@ -10,6 +10,26 @@ export const SLA_MS = {
   Med: 8*3600000, Media: 8*3600000, Média: 8*3600000, Moyenne: 8*3600000, Mittel: 8*3600000,
   Low: 24*3600000, Baja: 24*3600000, Baixa: 24*3600000, Basse: 24*3600000, Niedrig: 24*3600000,
 };
+export const DEMO_TICKETS = [
+  {
+    id: "TKT-0001",
+    title: "Error en pasarela de pagos",
+    summary: "El usuario reporta que el checkout falla al procesar tarjetas Visa.",
+    severity: "high",
+    status: "open",
+    createdAt: Date.now() - 3600000,
+    conversation: []
+  },
+  {
+    id: "TKT-0002",
+    title: "Actualización de Webhooks",
+    summary: "Consulta técnica sobre cómo configurar los webhooks de Stripe.",
+    severity: "low",
+    status: "resolved",
+    createdAt: Date.now() - 86400000,
+    conversation: []
+  }
+];
 
 // ── DEFAULT KNOWLEDGE BASE ──
 export const DEFAULT_KB = `Project: Nova Commerce Platform | Client: RetailCo S.A.

@@ -1,7 +1,7 @@
 import { useState, useRef, useEffect, useCallback } from "react";
 import "./styles/App.css";
 import { I18N, LANGS, LANG_LABELS } from "./i18n";
-import { DEMO_USERS, SLA_MS, DEFAULT_KB, INTEGRATION_DEFS } from "./constants";
+import { DEMO_USERS, SLA_MS, DEFAULT_KB, DEMO_TICKETS, INTEGRATION_DEFS } from "./constants";
 import { fmtDur, fmtAge, detectSev, getSevClass } from "./utils";
 
 export default function SentinelApp() {
@@ -54,7 +54,7 @@ export default function SentinelApp() {
 
   const setLang = (l) => {
     setLangState(l);
-    
+
     if (user?.role === "client" && chatMessages.length === 0) initChat(l);
   };
 
